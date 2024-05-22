@@ -8,7 +8,6 @@ public class ErrorMessage {
 
     public static final String EMPTY_BIRTH_DATE = "Birth date cannot be empty";
     public static final String INCORRECT_BIRTH_DATE = "Birth date must be earlier than current date";
-    public static final String INCORRECT_AGE = "Must be at least 18 years old";
     public static final String INCORRECT_PHONE_NUMBER = "Incorrect phone number";
     public static final String INVALID_DATE = "Invalid date suggested";
 

@@ -27,7 +27,7 @@ public class UpdateUserRequest {
 
     @NotNull( message = EMPTY_BIRTH_DATE)
     @Past(message = INCORRECT_BIRTH_DATE)
-    @AgeGreaterThan(valueFromProperties = "age.min", message = INCORRECT_AGE)
+    @AgeGreaterThan(valueFromProperties = "age.min")
     private LocalDate birthDate;
 
     private String address;

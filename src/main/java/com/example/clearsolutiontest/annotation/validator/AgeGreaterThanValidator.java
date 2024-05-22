@@ -24,9 +24,17 @@ public class AgeGreaterThanValidator implements ConstraintValidator<AgeGreaterTh
             return true; // Let @NotNull handle null check
         }
 
+
         LocalDate currentDate = LocalDate.now();
         Period period = Period.between(value, currentDate);
         int age = period.getYears();
+
+        if (age <= minAge) {
+            context.disableDefaultConstraintViolation();
+            context.buildConstraintViolationWithTemplate(
+                    context.getDefaultConstraintMessageTemplate().replace("{minAge}", String.valueOf(minAge))
+            ).addConstraintViolation();
+        }
 
         return age >= minAge;
     }
